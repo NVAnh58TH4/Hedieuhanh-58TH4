@@ -11,3 +11,16 @@ D:\btlHeDieuHanh-master\SOURCE\BTL\HeDieuHanh\HeDieuHanh\obj\Debug\HeDieuHanh.cs
 D:\btlHeDieuHanh-master\SOURCE\BTL\HeDieuHanh\HeDieuHanh\obj\Debug\HeDieuHanh.csproj.CoreCompileInputs.cache
 D:\btlHeDieuHanh-master\SOURCE\BTL\HeDieuHanh\HeDieuHanh\obj\Debug\HeDieuHanh.exe
 D:\btlHeDieuHanh-master\SOURCE\BTL\HeDieuHanh\HeDieuHanh\obj\Debug\HeDieuHanh.pdb
+G:\HOC TAP - TLU\HDH\VA\Hedieuhanh-58TH4\HeDieuHanh\HeDieuHanh\bin\Debug\HeDieuHanh.exe.config
+G:\HOC TAP - TLU\HDH\VA\Hedieuhanh-58TH4\HeDieuHanh\HeDieuHanh\bin\Debug\HeDieuHanh.exe
+G:\HOC TAP - TLU\HDH\VA\Hedieuhanh-58TH4\HeDieuHanh\HeDieuHanh\bin\Debug\HeDieuHanh.pdb
+G:\HOC TAP - TLU\HDH\VA\Hedieuhanh-58TH4\HeDieuHanh\HeDieuHanh\obj\Debug\HeDieuHanh.csprojAssemblyReference.cache
+G:\HOC TAP - TLU\HDH\VA\Hedieuhanh-58TH4\HeDieuHanh\HeDieuHanh\obj\Debug\HeDieuHanh.frmMain.resources
+G:\HOC TAP - TLU\HDH\VA\Hedieuhanh-58TH4\HeDieuHanh\HeDieuHanh\obj\Debug\HeDieuHanh.GUI.ucMusic.resources
+G:\HOC TAP - TLU\HDH\VA\Hedieuhanh-58TH4\HeDieuHanh\HeDieuHanh\obj\Debug\HeDieuHanh.GUI.ucTaskManager.resources
+G:\HOC TAP - TLU\HDH\VA\Hedieuhanh-58TH4\HeDieuHanh\HeDieuHanh\obj\Debug\HeDieuHanh.GUI.ucUtilities.resources
+G:\HOC TAP - TLU\HDH\VA\Hedieuhanh-58TH4\HeDieuHanh\HeDieuHanh\obj\Debug\HeDieuHanh.Properties.Resources.resources
+G:\HOC TAP - TLU\HDH\VA\Hedieuhanh-58TH4\HeDieuHanh\HeDieuHanh\obj\Debug\HeDieuHanh.csproj.GenerateResource.cache
+G:\HOC TAP - TLU\HDH\VA\Hedieuhanh-58TH4\HeDieuHanh\HeDieuHanh\obj\Debug\HeDieuHanh.csproj.CoreCompileInputs.cache
+G:\HOC TAP - TLU\HDH\VA\Hedieuhanh-58TH4\HeDieuHanh\HeDieuHanh\obj\Debug\HeDieuHanh.exe
+G:\HOC TAP - TLU\HDH\VA\Hedieuhanh-58TH4\HeDieuHanh\HeDieuHanh\obj\Debug\HeDieuHanh.pdb

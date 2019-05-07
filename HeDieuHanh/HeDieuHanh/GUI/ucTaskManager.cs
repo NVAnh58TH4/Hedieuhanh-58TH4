@@ -82,10 +82,12 @@ namespace HeDieuHanh.GUI
         {
             Process[] processList = taskManager.getListProcess();
             processoldcount = processList.Count();
+
             labelProcessCount.Text = processoldcount.ToString();
-            threadoldcount = 0;
+            //threadoldcount = 0;
 
             lvProcess.BeginUpdate();
+
             foreach (Process instance in processList)
             {
                 string[] itemArray = new string[6];
@@ -149,15 +151,18 @@ namespace HeDieuHanh.GUI
         private void btnEndProcess_Click(object sender, EventArgs e)
         {
             uint terminatedID;
+            uint exitcode;
             GetWindowThreadProcessId(selectedProcessHandle, out terminatedID); //Lấy process id
             selectedProcessHandle = OpenProcess(ProcessAccessFlags.Terminate, false, (int)terminatedID);
+            GetExitCodeProcess(selectedProcessHandle, out exitcode);
 
-            string messages = "Do you want to end " + selectedProcessName  + ".exe?";
+            string messages = "Do you want to end " + selectedProcessName + ".exe?";
             string caption = "Alert";
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult result;
 
             result = MessageBox.Show(messages, caption, buttons);
+
             if (result == DialogResult.Yes)
             {
                 if (selectedProcessWdnName == "")
@@ -166,8 +171,6 @@ namespace HeDieuHanh.GUI
                 }
                 else
                 {
-                    uint exitcode;
-                    GetExitCodeProcess(selectedProcessHandle, out exitcode);
                     TerminateProcess(selectedProcessHandle, exitcode);
                     CloseHandle(selectedProcessHandle);
                 }
