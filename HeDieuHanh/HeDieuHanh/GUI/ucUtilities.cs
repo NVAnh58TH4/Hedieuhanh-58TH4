@@ -13,6 +13,8 @@ namespace HeDieuHanh.GUI
 {
     public partial class ucUtilities : UserControl
     {
+        static int volumeValue;
+
         public ucUtilities()
         {
             InitializeComponent();
@@ -28,6 +30,7 @@ namespace HeDieuHanh.GUI
 
         void setupForm()
         {
+            volumeValue = trackBarVolume.Value;
             progressBarBattery.Maximum = 100;
             progressBarBattery.Minimum = 0;
 
@@ -45,14 +48,29 @@ namespace HeDieuHanh.GUI
             Volume.getInstant().mute();
         }
 
-        private void trackBarVolume_Scroll(object sender, EventArgs e)
+        /*private void trackBarVolume_Scroll(object sender, EventArgs e)
         {
             Volume.getInstant().volumeUp();
-        }
+        }*/
 
         private void timer_Tick(object sender, EventArgs e)
         {
             setupForm();
+        }
+
+        private void trackBarVolume_ValueChanged(object sender, EventArgs e)
+        {
+            int newValue = trackBarVolume.Value;
+            if (newValue > volumeValue)
+            {
+                Volume.getInstant().volumeUp();
+            }
+            else
+            {
+                Volume.getInstant().volumeDown();
+            }
+
+            volumeValue = newValue;
         }
     }
 }

@@ -84,7 +84,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 223F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 224F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1000, 224);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
@@ -133,11 +133,15 @@
             // trackBarVolume
             // 
             this.trackBarVolume.Dock = System.Windows.Forms.DockStyle.Right;
+            this.trackBarVolume.LargeChange = 2;
             this.trackBarVolume.Location = new System.Drawing.Point(81, 3);
+            this.trackBarVolume.Maximum = 100;
             this.trackBarVolume.Name = "trackBarVolume";
             this.trackBarVolume.Size = new System.Drawing.Size(160, 31);
+            this.trackBarVolume.SmallChange = 2;
             this.trackBarVolume.TabIndex = 1;
-            this.trackBarVolume.Scroll += new System.EventHandler(this.trackBarVolume_Scroll);
+            this.trackBarVolume.Value = 50;
+            this.trackBarVolume.ValueChanged += new System.EventHandler(this.trackBarVolume_ValueChanged);
             // 
             // tableLayoutPanel5
             // 
