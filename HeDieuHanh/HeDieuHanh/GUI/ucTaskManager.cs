@@ -15,24 +15,39 @@ namespace HeDieuHanh.GUI
 {
     public partial class ucTaskManager : UserControl
     {
+        //Huỷ process
         [DllImport("kernel32.dll", CharSet = CharSet.Unicode, SetLastError = true)]
-        static extern bool TerminateProcess(IntPtr hProcess, uint uExitCode); //Huỷ process
+        static extern bool TerminateProcess(IntPtr hProcess, uint uExitCode);
 
+        //Lấy mã thoát của process
         [DllImport("kernel32.dll", CharSet = CharSet.Unicode, SetLastError = true)]
-        static extern bool GetExitCodeProcess(IntPtr hProcess, out uint lpExitCode); //Lấy mã thoát của process
+        static extern bool GetExitCodeProcess(IntPtr hProcess, out uint lpExitCode);
 
+        //Lấy ID của process
         [DllImport("user32.dll", SetLastError = true)]
-        static extern uint GetWindowThreadProcessId(IntPtr hWnd, out uint lpdwProcessId); //Lấy ID của process
+        static extern uint GetWindowThreadProcessId(IntPtr hWnd, out uint lpdwProcessId);
 
+        //Lấy handle của process theo tên cửa sổ chương trình
         [DllImport("user32.dll", SetLastError = true)]
-        static extern IntPtr FindWindow(string lpClassName, string lpWindowName); //Lấy handle của process theo tên cửa sổ chương trình
+        static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
 
+        //mở process, chỉnh sửa thuộc tính
         [DllImport("kernel32.dll", SetLastError = true)]
-        public static extern IntPtr OpenProcess(ProcessAccessFlags processAccess, bool bInheritHandle, int processId); //mở process, chỉnh sửa thuộc tính
+        public static extern IntPtr OpenProcess(ProcessAccessFlags processAccess, bool bInheritHandle, int processId);
 
+        //Đóng handle
         [DllImport("kernel32.dll", SetLastError = true)]
-        static extern bool CloseHandle(IntPtr hObject); //Đóng handle
+        static extern bool CloseHandle(IntPtr hObject);
 
+        TaskManager taskManager;
+        private static int processoldcount;
+        private static int threadoldcount = 0;
+        private static int columnclickcount = 0;
+        private static string selectedProcessName;
+        private static string selectedProcessWdnName;
+        private static IntPtr selectedProcessHandle;
+
+        //Tạo enumerate chứa hành động cho phép thực hiện với process
         public enum ProcessAccessFlags : uint
         {
             All = 0x001F0FFF,
@@ -49,14 +64,6 @@ namespace HeDieuHanh.GUI
             QueryLimitedInformation = 0x00001000,
             Synchronize = 0x00100000
         }
-
-        TaskManager taskManager;
-        private static int processoldcount;
-        private static int threadoldcount = 0;
-        private static int columnclickcount = 0;
-        private static string selectedProcessName;
-        private static string selectedProcessWdnName;
-        private static IntPtr selectedProcessHandle;
 
         public ucTaskManager()
         {
@@ -82,12 +89,12 @@ namespace HeDieuHanh.GUI
         {
             Process[] processList = taskManager.getListProcess();
             processoldcount = processList.Count();
-
             labelProcessCount.Text = processoldcount.ToString();
-            //threadoldcount = 0;
+            threadoldcount = 0;
 
             lvProcess.BeginUpdate();
 
+            //Thêm các item mới chứa thông tin của process vào ListView
             foreach (Process instance in processList)
             {
                 string[] itemArray = new string[6];
@@ -131,6 +138,8 @@ namespace HeDieuHanh.GUI
             selectedProcessHandle = FindWindow(null, selectedProcessWdnName);
         }
 
+
+        //Chạy chương trình mới
         private void btnNewProcess_Click(object sender, EventArgs e)
         {
             OpenFileDialog newProcessDialog = new OpenFileDialog();
@@ -151,18 +160,19 @@ namespace HeDieuHanh.GUI
         private void btnEndProcess_Click(object sender, EventArgs e)
         {
             uint terminatedID;
-            uint exitcode;
-            GetWindowThreadProcessId(selectedProcessHandle, out terminatedID); //Lấy process id
-            selectedProcessHandle = OpenProcess(ProcessAccessFlags.Terminate, false, (int)terminatedID);
-            GetExitCodeProcess(selectedProcessHandle, out exitcode);
 
-            string messages = "Do you want to end " + selectedProcessName + ".exe?";
+            //Lấy process id
+            GetWindowThreadProcessId(selectedProcessHandle, out terminatedID);
+
+            //Cấp quyền terminate process cho handle
+            selectedProcessHandle = OpenProcess(ProcessAccessFlags.Terminate, false, (int)terminatedID);
+
+            string messages = "Do you want to end " + selectedProcessName  + ".exe?";
             string caption = "Alert";
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult result;
 
             result = MessageBox.Show(messages, caption, buttons);
-
             if (result == DialogResult.Yes)
             {
                 if (selectedProcessWdnName == "")
@@ -171,7 +181,15 @@ namespace HeDieuHanh.GUI
                 }
                 else
                 {
+                    uint exitcode;
+                    
+                    //Lấy exit code của process
+                    GetExitCodeProcess(selectedProcessHandle, out exitcode);
+
+                    //Huỷ process
                     TerminateProcess(selectedProcessHandle, exitcode);
+
+                    //Đóng handle
                     CloseHandle(selectedProcessHandle);
                 }
             }
@@ -181,6 +199,8 @@ namespace HeDieuHanh.GUI
         {
             Process[] newList = taskManager.getListProcess();
             int newcount = newList.Count();
+
+            //Refresh listview nếu số lượng process thay đổi
             if (newcount != processoldcount)
             {
                 lvProcess.Items.Clear();
@@ -189,6 +209,7 @@ namespace HeDieuHanh.GUI
 
             int newthreadcount = 0;
 
+            //Đếm số lượng thread mới
             foreach (Process instance in newList)
             {
                 newthreadcount += instance.Threads.Count;
