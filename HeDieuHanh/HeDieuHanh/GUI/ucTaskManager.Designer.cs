@@ -119,11 +119,11 @@
             // 
             this.labelProcessCount.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelProcessCount.AutoSize = true;
-            this.labelProcessCount.Location = new System.Drawing.Point(211, 17);
+            this.labelProcessCount.Location = new System.Drawing.Point(219, 17);
             this.labelProcessCount.Name = "labelProcessCount";
-            this.labelProcessCount.Size = new System.Drawing.Size(32, 17);
+            this.labelProcessCount.Size = new System.Drawing.Size(16, 17);
             this.labelProcessCount.TabIndex = 3;
-            this.labelProcessCount.Text = "200";
+            this.labelProcessCount.Text = "0";
             this.labelProcessCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelNumOfThreads
@@ -142,11 +142,11 @@
             // 
             this.labelThreadCount.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelThreadCount.AutoSize = true;
-            this.labelThreadCount.Location = new System.Drawing.Point(496, 17);
+            this.labelThreadCount.Location = new System.Drawing.Point(508, 17);
             this.labelThreadCount.Name = "labelThreadCount";
-            this.labelThreadCount.Size = new System.Drawing.Size(40, 17);
+            this.labelThreadCount.Size = new System.Drawing.Size(16, 17);
             this.labelThreadCount.TabIndex = 5;
-            this.labelThreadCount.Text = "2000";
+            this.labelThreadCount.Text = "0";
             this.labelThreadCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lvProcess
