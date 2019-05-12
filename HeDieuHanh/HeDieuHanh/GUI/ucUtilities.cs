@@ -30,24 +30,14 @@ namespace HeDieuHanh.GUI
 
         void setupForm()
         {
-            volumeValue = trackBarVolume.Value;
-            progressBarBattery.Maximum = 100;
-            progressBarBattery.Minimum = 0;
+            prgBattery.Maximum = 100;
+            prgBattery.Minimum = 0;
 
-            trackBarVolume.Maximum = 100;
-            trackBarVolume.Minimum = 0;
-
-            progressBarBattery.Value = Battery.getInstant().getBatteryLifePercent();
-            lblStatePin.Text = Battery.getInstant().getBatteryStatus();
-            lblBattery.Text = Battery.getInstant().getPercentBattery();
-            lblInternet.Text = Network.getInstant().getStateInternet();
+            prgBattery.Value = Battery.getInstant().getBatteryLifePercent();
+            lblStateBattery.Text = Battery.getInstant().getBatteryStatus();
+            lblCapacityBattery.Text = Battery.getInstant().getPercentBattery();
+            lblStateNetwork.Text = Network.getInstant().getStateInternet();
         }
-
-        private void btnMute_Click(object sender, EventArgs e)
-        {
-            Volume.getInstant().mute();
-        }
-
         /*private void trackBarVolume_Scroll(object sender, EventArgs e)
         {
             Volume.getInstant().volumeUp();
@@ -58,19 +48,19 @@ namespace HeDieuHanh.GUI
             setupForm();
         }
 
-        private void trackBarVolume_ValueChanged(object sender, EventArgs e)
+        private void btnVolumeUp_Click(object sender, EventArgs e)
         {
-            int newValue = trackBarVolume.Value;
-            if (newValue > volumeValue)
-            {
-                Volume.getInstant().volumeUp();
-            }
-            else
-            {
-                Volume.getInstant().volumeDown();
-            }
+            Volume.getInstant().volumeUp();
+        }
 
-            volumeValue = newValue;
+        private void btnVolumeDown_Click(object sender, EventArgs e)
+        {
+            Volume.getInstant().volumeDown();
+        }
+
+        private void btnMute_Click(object sender, EventArgs e)
+        {
+            Volume.getInstant().mute();
         }
     }
 }

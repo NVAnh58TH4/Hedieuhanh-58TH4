@@ -35,8 +35,8 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btnMusic = new System.Windows.Forms.ToolStripButton();
             this.btnUtility = new System.Windows.Forms.ToolStripButton();
-            this.pnDisplay = new System.Windows.Forms.Panel();
             this.tlpDisplay = new System.Windows.Forms.TableLayoutPanel();
+            this.pnDisplay = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.tlpDisplay.SuspendLayout();
@@ -54,7 +54,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(932, 507);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(832, 573);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // toolStrip1
@@ -69,7 +69,7 @@
             this.toolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(139, 507);
+            this.toolStrip1.Size = new System.Drawing.Size(124, 573);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -79,14 +79,14 @@
             this.btnTaskManager.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnTaskManager.Margin = new System.Windows.Forms.Padding(0, 30, 0, 2);
             this.btnTaskManager.Name = "btnTaskManager";
-            this.btnTaskManager.Size = new System.Drawing.Size(137, 24);
+            this.btnTaskManager.Size = new System.Drawing.Size(122, 24);
             this.btnTaskManager.Text = "TaskManager";
             this.btnTaskManager.Click += new System.EventHandler(this.btnTaskManager_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(137, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(118, 6);
             // 
             // btnMusic
             // 
@@ -94,7 +94,7 @@
             this.btnMusic.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnMusic.Margin = new System.Windows.Forms.Padding(0, 10, 0, 2);
             this.btnMusic.Name = "btnMusic";
-            this.btnMusic.Size = new System.Drawing.Size(137, 24);
+            this.btnMusic.Size = new System.Drawing.Size(118, 24);
             this.btnMusic.Text = "Music";
             this.btnMusic.Click += new System.EventHandler(this.btnMusic_Click);
             // 
@@ -103,17 +103,9 @@
             this.btnUtility.Image = ((System.Drawing.Image)(resources.GetObject("btnUtility.Image")));
             this.btnUtility.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnUtility.Name = "btnUtility";
-            this.btnUtility.Size = new System.Drawing.Size(137, 24);
+            this.btnUtility.Size = new System.Drawing.Size(118, 24);
             this.btnUtility.Text = "Tiện ích";
             this.btnUtility.Click += new System.EventHandler(this.btnUtility_Click);
-            // 
-            // pnDisplay
-            // 
-            this.pnDisplay.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnDisplay.Location = new System.Drawing.Point(3, 3);
-            this.pnDisplay.Name = "pnDisplay";
-            this.pnDisplay.Size = new System.Drawing.Size(781, 495);
-            this.pnDisplay.TabIndex = 1;
             // 
             // tlpDisplay
             // 
@@ -121,20 +113,30 @@
             this.tlpDisplay.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpDisplay.Controls.Add(this.pnDisplay, 0, 0);
             this.tlpDisplay.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpDisplay.Location = new System.Drawing.Point(142, 3);
+            this.tlpDisplay.Location = new System.Drawing.Point(127, 3);
             this.tlpDisplay.Name = "tlpDisplay";
             this.tlpDisplay.RowCount = 1;
             this.tlpDisplay.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDisplay.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpDisplay.Size = new System.Drawing.Size(787, 501);
+            this.tlpDisplay.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 1F));
+            this.tlpDisplay.Size = new System.Drawing.Size(702, 567);
             this.tlpDisplay.TabIndex = 1;
+            // 
+            // pnDisplay
+            // 
+            this.pnDisplay.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnDisplay.Location = new System.Drawing.Point(3, 3);
+            this.pnDisplay.Name = "pnDisplay";
+            this.pnDisplay.Size = new System.Drawing.Size(696, 561);
+            this.pnDisplay.TabIndex = 1;
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(932, 507);
+            this.ClientSize = new System.Drawing.Size(832, 573);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.MaximumSize = new System.Drawing.Size(850, 620);
+            this.MinimumSize = new System.Drawing.Size(850, 620);
             this.Name = "frmMain";
             this.Text = "Hệ điều hành";
             this.Load += new System.EventHandler(this.frmMain_Load);

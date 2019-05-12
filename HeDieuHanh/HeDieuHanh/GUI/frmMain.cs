@@ -31,18 +31,12 @@ namespace HeDieuHanh
 
         void setupForm()
         {
-
+            displayUcOnPanel(ucTaskManager);
         }
 
 
         private void btnTaskManager_Click(object sender, EventArgs e)
         {
-            //pnDisplay.Controls.Clear();
-            //pnDisplay.Refresh();
-
-            
-            //pnDisplay.Controls.Add(ucTaskManager);
-            //ucTaskManager.Dock = DockStyle.Fill;
             displayUcOnPanel(ucTaskManager);
         }
 
