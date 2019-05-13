@@ -27,19 +27,15 @@ namespace HeDieuHanh.Class
             return shared;
         }
 
-        //Tăng âm lượng
         public void volumeUp()
         {
             keybd_event((byte)VK_VOLUME_UP, 0, 0, 0);
         }
 
-        //Giảm âm lượng
         public void volumeDown()
         {
             keybd_event((byte)VK_VOLUME_DOWN, 0, 0, 0);
         }
-
-        //Tắt âm
         public void mute()
         {
             keybd_event((byte)VK_VOLUME_MUTE, 0, 0, 0);

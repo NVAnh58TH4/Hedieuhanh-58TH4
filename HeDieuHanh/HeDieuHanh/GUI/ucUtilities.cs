@@ -33,23 +33,6 @@ namespace HeDieuHanh.GUI
             prgBattery.Maximum = 100;
             prgBattery.Minimum = 0;
 
-<<<<<<< HEAD
-            trackBarVolume.Maximum = 100;
-            trackBarVolume.Minimum = 0;
-
-            progressBarBattery.Value = Battery.getInstant().getBatteryLifePercent();
-            lblStatePin.Text = Battery.getInstant().getBatteryStatus();
-            lblBattery.Text = Battery.getInstant().getPercentBattery();
-            lblInternet.Text = Network.getInstant().getStateInternet();
-        }
-
-
-        //Xử lý sự kiện ấn nút Tắt âm
-        private void btnMute_Click(object sender, EventArgs e)
-        {
-            Volume.getInstant().mute();
-        }
-=======
             prgBattery.Value = Battery.getInstant().getBatteryLifePercent();
             lblStateBattery.Text = Battery.getInstant().getBatteryStatus();
             lblCapacityBattery.Text = Battery.getInstant().getPercentBattery();
@@ -59,20 +42,13 @@ namespace HeDieuHanh.GUI
         {
             Volume.getInstant().volumeUp();
         }*/
->>>>>>> 954b744ec780b01310f476d7a04e8e68e73136ca
 
         private void timer_Tick(object sender, EventArgs e)
         {
             setupForm();
         }
 
-<<<<<<< HEAD
-
-        //Thay đổi âm lượng khi giá trị trackbar thay đổi
-        private void trackBarVolume_ValueChanged(object sender, EventArgs e)
-=======
         private void btnVolumeUp_Click(object sender, EventArgs e)
->>>>>>> 954b744ec780b01310f476d7a04e8e68e73136ca
         {
             Volume.getInstant().volumeUp();
         }

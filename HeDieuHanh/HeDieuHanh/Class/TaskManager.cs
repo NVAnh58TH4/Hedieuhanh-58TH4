@@ -20,16 +20,12 @@ namespace HeDieuHanh.Class
             return shared;
         }
 
-
-        //Trả về mảng các tiến trình
         public Process[] getListProcess()
         {
             Process[] listProcess = Process.GetProcesses();
             return listProcess;
         }
 
-
-        //Khởi tạo ListView
         public ListView setupListView(ListView processlist)
         {
             processlist.Columns.Add("Name");
