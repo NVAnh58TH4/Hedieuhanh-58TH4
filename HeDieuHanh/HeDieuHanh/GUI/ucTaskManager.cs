@@ -72,12 +72,14 @@ namespace HeDieuHanh.GUI
             taskManager = new TaskManager();
         }
 
+        //Xoá sạch và tải lại ListView
         private void ucTaskManager_Load(object sender, EventArgs e)
         {
             lvProcess.Items.Clear();
             setupUC();
         }
 
+        //Hiển thị ListView
         private void setupUC()
         {
             taskManager.setupListView(lvProcess);
@@ -85,6 +87,7 @@ namespace HeDieuHanh.GUI
             showProcessList();
         }
 
+        //Hiện danh sách tiến trình
         private void showProcessList()
         {
             Process[] processList = taskManager.getListProcess();
@@ -117,6 +120,7 @@ namespace HeDieuHanh.GUI
             labelThreadCount.Text = threadoldcount.ToString();
         }
 
+        //Xử lý sự kiện click chuột vào cột của ListView, sắp xếp theo tên
         private void lvProcess_ColumnClick(object sender, ColumnClickEventArgs e)
         {
             if (columnclickcount == 0)
@@ -131,6 +135,7 @@ namespace HeDieuHanh.GUI
             }
         }
 
+        //Chọn item của ListView
         private void lvProcess_Click(object sender, EventArgs e)
         {
             selectedProcessName = lvProcess.SelectedItems[0].SubItems[0].Text;
@@ -157,6 +162,7 @@ namespace HeDieuHanh.GUI
             }
         }
 
+        //Dừng chương trình
         private void btnEndProcess_Click(object sender, EventArgs e)
         {
             uint terminatedID;
@@ -200,7 +206,7 @@ namespace HeDieuHanh.GUI
             Process[] newList = taskManager.getListProcess();
             int newcount = newList.Count();
 
-            //Refresh listview nếu số lượng process thay đổi
+            //Refresh ListView nếu số lượng process thay đổi
             if (newcount != processoldcount)
             {
                 lvProcess.Items.Clear();
