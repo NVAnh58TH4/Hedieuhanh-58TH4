@@ -18,6 +18,7 @@ namespace HeDieuHanh
         ucTaskManager ucTaskManager = new ucTaskManager();
         ucMusic ucMusic = new ucMusic();
         ucUtilities ucUtilities = new ucUtilities();
+        ucSystemInfor ucSystemInfor = new ucSystemInfor();
 
         public frmMain()
         {
@@ -31,7 +32,8 @@ namespace HeDieuHanh
 
         void setupForm()
         {
-            displayUcOnPanel(ucTaskManager);
+            displayUcOnPanel(ucUtilities);
+            //displayUcOnPanel(ucTaskManager);
         }
 
 
@@ -51,6 +53,11 @@ namespace HeDieuHanh
             displayUcOnPanel(ucUtilities);
         }
 
+        private void btnSystemInfor_Click(object sender, EventArgs e)
+        {
+            displayUcOnPanel(ucSystemInfor);
+        }
+
         private void trackBarVolume_Scroll(object sender, EventArgs e)
         {
             Volume.getInstant().volumeUp();
@@ -64,5 +71,6 @@ namespace HeDieuHanh
             userControl.Dock = DockStyle.Fill;
         }
 
+        
     }
 }

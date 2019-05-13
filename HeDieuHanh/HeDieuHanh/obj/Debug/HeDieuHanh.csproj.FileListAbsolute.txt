@@ -50,3 +50,4 @@ G:\HOC TAP - TLU\HDH\VA\Hedieuhanh-58TH4\HeDieuHanh\HeDieuHanh\obj\Debug\HeDieuH
 G:\HOC TAP - TLU\HDH\VA\Hedieuhanh-58TH4\HeDieuHanh\HeDieuHanh\obj\Debug\HeDieuHanh.csproj.CoreCompileInputs.cache
 G:\HOC TAP - TLU\HDH\VA\Hedieuhanh-58TH4\HeDieuHanh\HeDieuHanh\obj\Debug\HeDieuHanh.exe
 G:\HOC TAP - TLU\HDH\VA\Hedieuhanh-58TH4\HeDieuHanh\HeDieuHanh\obj\Debug\HeDieuHanh.pdb
+G:\HOC TAP - TLU\HDH\VA\Hedieuhanh-58TH4\HeDieuHanh\HeDieuHanh\obj\Debug\HeDieuHanh.GUI.ucSystemInfor.resources

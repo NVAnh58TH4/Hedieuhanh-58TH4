@@ -30,15 +30,16 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.btn = new System.Windows.Forms.ToolStrip();
             this.btnTaskManager = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btnMusic = new System.Windows.Forms.ToolStripButton();
             this.btnUtility = new System.Windows.Forms.ToolStripButton();
             this.tlpDisplay = new System.Windows.Forms.TableLayoutPanel();
             this.pnDisplay = new System.Windows.Forms.Panel();
+            this.btnSystemInfor = new System.Windows.Forms.ToolStripButton();
             this.tableLayoutPanel1.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
+            this.btn.SuspendLayout();
             this.tlpDisplay.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +48,7 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85F));
-            this.tableLayoutPanel1.Controls.Add(this.toolStrip1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btn, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tlpDisplay, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -57,21 +58,22 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(832, 573);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // toolStrip1
+            // btn
             // 
-            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.btn.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnTaskManager,
             this.toolStripSeparator1,
             this.btnMusic,
-            this.btnUtility});
-            this.toolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(124, 573);
-            this.toolStrip1.TabIndex = 0;
-            this.toolStrip1.Text = "toolStrip1";
+            this.btnUtility,
+            this.btnSystemInfor});
+            this.btn.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
+            this.btn.Location = new System.Drawing.Point(0, 0);
+            this.btn.Name = "btn";
+            this.btn.Size = new System.Drawing.Size(124, 573);
+            this.btn.TabIndex = 0;
+            this.btn.Text = "toolStrip1";
             // 
             // btnTaskManager
             // 
@@ -86,7 +88,7 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(118, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(122, 6);
             // 
             // btnMusic
             // 
@@ -94,7 +96,7 @@
             this.btnMusic.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnMusic.Margin = new System.Windows.Forms.Padding(0, 10, 0, 2);
             this.btnMusic.Name = "btnMusic";
-            this.btnMusic.Size = new System.Drawing.Size(118, 24);
+            this.btnMusic.Size = new System.Drawing.Size(122, 24);
             this.btnMusic.Text = "Music";
             this.btnMusic.Click += new System.EventHandler(this.btnMusic_Click);
             // 
@@ -103,7 +105,7 @@
             this.btnUtility.Image = ((System.Drawing.Image)(resources.GetObject("btnUtility.Image")));
             this.btnUtility.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnUtility.Name = "btnUtility";
-            this.btnUtility.Size = new System.Drawing.Size(118, 24);
+            this.btnUtility.Size = new System.Drawing.Size(122, 24);
             this.btnUtility.Text = "Tiện ích";
             this.btnUtility.Click += new System.EventHandler(this.btnUtility_Click);
             // 
@@ -129,6 +131,15 @@
             this.pnDisplay.Size = new System.Drawing.Size(696, 561);
             this.pnDisplay.TabIndex = 1;
             // 
+            // btnSystemInfor
+            // 
+            this.btnSystemInfor.Image = ((System.Drawing.Image)(resources.GetObject("btnSystemInfor.Image")));
+            this.btnSystemInfor.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSystemInfor.Name = "btnSystemInfor";
+            this.btnSystemInfor.Size = new System.Drawing.Size(122, 24);
+            this.btnSystemInfor.Text = "SystemInfor";
+            this.btnSystemInfor.Click += new System.EventHandler(this.btnSystemInfor_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -142,8 +153,8 @@
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+            this.btn.ResumeLayout(false);
+            this.btn.PerformLayout();
             this.tlpDisplay.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -152,13 +163,14 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStrip btn;
         private System.Windows.Forms.ToolStripButton btnTaskManager;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton btnMusic;
         private System.Windows.Forms.ToolStripButton btnUtility;
         private System.Windows.Forms.TableLayoutPanel tlpDisplay;
         private System.Windows.Forms.Panel pnDisplay;
+        private System.Windows.Forms.ToolStripButton btnSystemInfor;
     }
 }
 

@@ -52,6 +52,7 @@
     <Compile Include="Class\Network.cs" />
     <Compile Include="Class\TaskManager.cs" />
     <Compile Include="Class\Volume.cs" />
+    <Compile Include="Class\Wallpaper.cs" />
     <Compile Include="GUI\frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +65,12 @@
     </Compile>
     <Compile Include="GUI\ucMusic.Designer.cs">
       <DependentUpon>ucMusic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ucSystemInfor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\ucSystemInfor.Designer.cs">
+      <DependentUpon>ucSystemInfor.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\ucTaskManager.cs">
       <SubType>UserControl</SubType>
@@ -83,6 +90,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ucMusic.resx">
       <DependentUpon>ucMusic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ucSystemInfor.resx">
+      <DependentUpon>ucSystemInfor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ucTaskManager.resx">
       <DependentUpon>ucTaskManager.cs</DependentUpon>
