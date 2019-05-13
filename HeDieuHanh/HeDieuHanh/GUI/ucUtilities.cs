@@ -43,21 +43,20 @@ namespace HeDieuHanh.GUI
             lblInternet.Text = Network.getInstant().getStateInternet();
         }
 
+
+        //Xử lý sự kiện ấn nút Tắt âm
         private void btnMute_Click(object sender, EventArgs e)
         {
             Volume.getInstant().mute();
         }
-
-        /*private void trackBarVolume_Scroll(object sender, EventArgs e)
-        {
-            Volume.getInstant().volumeUp();
-        }*/
 
         private void timer_Tick(object sender, EventArgs e)
         {
             setupForm();
         }
 
+
+        //Thay đổi âm lượng khi giá trị trackbar thay đổi
         private void trackBarVolume_ValueChanged(object sender, EventArgs e)
         {
             int newValue = trackBarVolume.Value;
