@@ -30,10 +30,10 @@ namespace HeDieuHanh.GUI
 
         void setupForm()
         {
-            volumeValue = trackBarVolume.Value;
-            progressBarBattery.Maximum = 100;
-            progressBarBattery.Minimum = 0;
+            prgBattery.Maximum = 100;
+            prgBattery.Minimum = 0;
 
+<<<<<<< HEAD
             trackBarVolume.Maximum = 100;
             trackBarVolume.Minimum = 0;
 
@@ -49,27 +49,42 @@ namespace HeDieuHanh.GUI
         {
             Volume.getInstant().mute();
         }
+=======
+            prgBattery.Value = Battery.getInstant().getBatteryLifePercent();
+            lblStateBattery.Text = Battery.getInstant().getBatteryStatus();
+            lblCapacityBattery.Text = Battery.getInstant().getPercentBattery();
+            lblStateNetwork.Text = Network.getInstant().getStateInternet();
+        }
+        /*private void trackBarVolume_Scroll(object sender, EventArgs e)
+        {
+            Volume.getInstant().volumeUp();
+        }*/
+>>>>>>> 954b744ec780b01310f476d7a04e8e68e73136ca
 
         private void timer_Tick(object sender, EventArgs e)
         {
             setupForm();
         }
 
+<<<<<<< HEAD
 
         //Thay đổi âm lượng khi giá trị trackbar thay đổi
         private void trackBarVolume_ValueChanged(object sender, EventArgs e)
+=======
+        private void btnVolumeUp_Click(object sender, EventArgs e)
+>>>>>>> 954b744ec780b01310f476d7a04e8e68e73136ca
         {
-            int newValue = trackBarVolume.Value;
-            if (newValue > volumeValue)
-            {
-                Volume.getInstant().volumeUp();
-            }
-            else
-            {
-                Volume.getInstant().volumeDown();
-            }
+            Volume.getInstant().volumeUp();
+        }
 
-            volumeValue = newValue;
+        private void btnVolumeDown_Click(object sender, EventArgs e)
+        {
+            Volume.getInstant().volumeDown();
+        }
+
+        private void btnMute_Click(object sender, EventArgs e)
+        {
+            Volume.getInstant().mute();
         }
     }
 }
