@@ -11,7 +11,9 @@ namespace HeDieuHanh.Class
     class Battery
     {
         [DllImport("user32.dll", EntryPoint = "MessageBox")]
-        public static extern int MessageBox(int hwnd, string lpText, string lpCaption, int wType);
+        public static extern int MessageBox(int hwnd, string lpText, string lpCaption, int wType); //Hiển thị hộp thoại
+
+        //Lấy thông tin pin
         PowerStatus powerStatus = SystemInformation.PowerStatus;
 
         public static Battery shared;

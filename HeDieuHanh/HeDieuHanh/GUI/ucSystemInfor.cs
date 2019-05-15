@@ -15,8 +15,9 @@ namespace HeDieuHanh.GUI
     public partial class ucSystemInfor : UserControl
     {
         [DllImport("kernel32.dll")]
-        public static extern void GetSystemInfo(out SystemInfo input);
+        public static extern void GetSystemInfo(out SystemInfo input); //Lấy thông tin CPU
 
+        //Kiểu dữ liệu tự định nghĩa về kiến trúc của CPU
         public enum ProcessorArchitecture
         {
             X86 = 0,
@@ -28,18 +29,19 @@ namespace HeDieuHanh.GUI
 
         [StructLayout(LayoutKind.Sequential)]
 
+        //Kiểu dữ liệu tổng hợp thông tin CPU
         public struct SystemInfo
         {
-            public ProcessorArchitecture ProcessorArchitecture; // WORD
-            public uint PageSize; // DWORD
-            public IntPtr MinimumApplicationAddress; // (long)void*
-            public IntPtr MaximumApplicationAddress; // (long)void*
-            public IntPtr ActiveProcessorMask; // DWORD*
-            public uint NumberOfProcessors; // DWORD (WTF)
-            public uint ProcessorType; // DWORD
-            public uint AllocationGranularity; // DWORD
-            public ushort ProcessorLevel; // WORD
-            public ushort ProcessorRevision; // WORD
+            public ProcessorArchitecture ProcessorArchitecture; //Kiến trúc
+            public uint PageSize; // Kích cỡ trang
+            public IntPtr MinimumApplicationAddress; // Kích cỡ ứng dụng tối thiểu
+            public IntPtr MaximumApplicationAddress; // Kích cỡ ứng dụng tối đa
+            public IntPtr ActiveProcessorMask;
+            public uint NumberOfProcessors; //Số bộ xử lý
+            public uint ProcessorType; // Loại bộ xử lý
+            public uint AllocationGranularity;
+            public ushort ProcessorLevel;
+            public ushort ProcessorRevision;
         }
 
         public ucSystemInfor()
@@ -47,6 +49,8 @@ namespace HeDieuHanh.GUI
             InitializeComponent();
         }
 
+
+        // Thêm thông tin vào listbox
         private void btnShow_Click(object sender, EventArgs e)
         {
             try
@@ -63,10 +67,10 @@ namespace HeDieuHanh.GUI
                 SystemInfoArray[3] = pSI.PageSize.ToString();
 
                 SystemInfoArray[4] = "Minimum Application Address:";
-                SystemInfoArray[5] = pSI.MinimumApplicationAddress.ToString("X");
+                SystemInfoArray[5] = Convert.ToInt32(pSI.MinimumApplicationAddress.ToString("X"), 16).ToString();
 
                 SystemInfoArray[6] = "Maximum Application Address:";
-                SystemInfoArray[7] = pSI.MaximumApplicationAddress.ToString("X");
+                SystemInfoArray[7] = Convert.ToInt64(pSI.MaximumApplicationAddress.ToString("X"), 16).ToString();
 
                 SystemInfoArray[8] = "Active Processor Mask:";
                 SystemInfoArray[9] = pSI.ActiveProcessorMask.ToString();

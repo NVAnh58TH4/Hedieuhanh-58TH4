@@ -31,7 +31,7 @@ namespace HeDieuHanh.GUI
         [DllImport("user32.dll", SetLastError = true)]
         static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
 
-        //mở process, chỉnh sửa thuộc tính
+        //Mở process, chỉnh sửa thuộc tính
         [DllImport("kernel32.dll", SetLastError = true)]
         public static extern IntPtr OpenProcess(ProcessAccessFlags processAccess, bool bInheritHandle, int processId);
 
