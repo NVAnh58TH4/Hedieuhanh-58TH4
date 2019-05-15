@@ -32,8 +32,7 @@ namespace HeDieuHanh
 
         void setupForm()
         {
-            displayUcOnPanel(ucUtilities);
-            //displayUcOnPanel(ucTaskManager);
+            displayUcOnPanel(ucTaskManager);
         }
 
 
