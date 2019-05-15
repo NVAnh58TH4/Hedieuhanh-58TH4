@@ -27,6 +27,7 @@ namespace HeDieuHanh.GUI
             setupForm();
         }
 
+        //Tạo form
         void setupForm()
         {
             nmrHour.Maximum = 24;
@@ -42,31 +43,33 @@ namespace HeDieuHanh.GUI
 
             lblDatetime.Text = Datetime.getInstant().getTime();
         }
-        /*private void trackBarVolume_Scroll(object sender, EventArgs e)
-        {
-            Volume.getInstant().volumeUp();
-        }*/
 
         private void timer_Tick(object sender, EventArgs e)
         {
             setupForm();
         }
 
+
+        //Tăng âm
         private void btnVolumeUp_Click(object sender, EventArgs e)
         {
             Volume.getInstant().volumeUp();
         }
 
+
+        //Giảm âm
         private void btnVolumeDown_Click(object sender, EventArgs e)
         {
             Volume.getInstant().volumeDown();
         }
 
+        //Tắt âm
         private void btnMute_Click(object sender, EventArgs e)
         {
             Volume.getInstant().mute();
         }
 
+        //Đổi ngày giờ
         private void btnChangeDateTime_Click(object sender, EventArgs e)
         {
             short year = short.Parse(dtp.Value.Date.Year.ToString());
@@ -76,7 +79,7 @@ namespace HeDieuHanh.GUI
             short minute = short.Parse(nmrMinute.Value.ToString());
             try
             {
-                Datetime.getInstant().setTime(2016, month, day, hour, minute);
+                Datetime.getInstant().setTime(year, month, day, hour, minute);
             }
             catch (Exception ex)
             {
@@ -84,10 +87,11 @@ namespace HeDieuHanh.GUI
             }
         }
 
+        //Chọn ảnh
         private void btnBrowser_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "Image File|*jpg;*gif;*png";//chọn ảnh
+            ofd.Filter = "Image File|*jpg;*gif;*png";
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 txtUrl.Text = ofd.FileName;
@@ -95,6 +99,8 @@ namespace HeDieuHanh.GUI
             }
         }
 
+
+        //Đổi hình nền
         private void btnChange_Click(object sender, EventArgs e)
         {
             new Wallpaper(txtUrl.Text).ChangeBackground();
