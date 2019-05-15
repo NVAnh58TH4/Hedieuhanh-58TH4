@@ -42,10 +42,6 @@ namespace HeDieuHanh.GUI
 
             lblDatetime.Text = Datetime.getInstant().getTime();
         }
-        /*private void trackBarVolume_Scroll(object sender, EventArgs e)
-        {
-            Volume.getInstant().volumeUp();
-        }*/
 
         private void timer_Tick(object sender, EventArgs e)
         {

@@ -35,9 +35,9 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btnMusic = new System.Windows.Forms.ToolStripButton();
             this.btnUtility = new System.Windows.Forms.ToolStripButton();
+            this.btnSystemInfo = new System.Windows.Forms.ToolStripButton();
             this.tlpDisplay = new System.Windows.Forms.TableLayoutPanel();
             this.pnDisplay = new System.Windows.Forms.Panel();
-            this.btnSystemInfor = new System.Windows.Forms.ToolStripButton();
             this.tableLayoutPanel1.SuspendLayout();
             this.btn.SuspendLayout();
             this.tlpDisplay.SuspendLayout();
@@ -67,7 +67,7 @@
             this.toolStripSeparator1,
             this.btnMusic,
             this.btnUtility,
-            this.btnSystemInfor});
+            this.btnSystemInfo});
             this.btn.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
             this.btn.Location = new System.Drawing.Point(0, 0);
             this.btn.Name = "btn";
@@ -109,6 +109,15 @@
             this.btnUtility.Text = "Tiện ích";
             this.btnUtility.Click += new System.EventHandler(this.btnUtility_Click);
             // 
+            // btnSystemInfo
+            // 
+            this.btnSystemInfo.Image = ((System.Drawing.Image)(resources.GetObject("btnSystemInfo.Image")));
+            this.btnSystemInfo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSystemInfo.Name = "btnSystemInfo";
+            this.btnSystemInfo.Size = new System.Drawing.Size(122, 24);
+            this.btnSystemInfo.Text = "SystemInfo";
+            this.btnSystemInfo.Click += new System.EventHandler(this.btnSystemInfor_Click);
+            // 
             // tlpDisplay
             // 
             this.tlpDisplay.ColumnCount = 1;
@@ -130,15 +139,6 @@
             this.pnDisplay.Name = "pnDisplay";
             this.pnDisplay.Size = new System.Drawing.Size(696, 561);
             this.pnDisplay.TabIndex = 1;
-            // 
-            // btnSystemInfor
-            // 
-            this.btnSystemInfor.Image = ((System.Drawing.Image)(resources.GetObject("btnSystemInfor.Image")));
-            this.btnSystemInfor.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnSystemInfor.Name = "btnSystemInfor";
-            this.btnSystemInfor.Size = new System.Drawing.Size(122, 24);
-            this.btnSystemInfor.Text = "SystemInfor";
-            this.btnSystemInfor.Click += new System.EventHandler(this.btnSystemInfor_Click);
             // 
             // frmMain
             // 
@@ -170,7 +170,7 @@
         private System.Windows.Forms.ToolStripButton btnUtility;
         private System.Windows.Forms.TableLayoutPanel tlpDisplay;
         private System.Windows.Forms.Panel pnDisplay;
-        private System.Windows.Forms.ToolStripButton btnSystemInfor;
+        private System.Windows.Forms.ToolStripButton btnSystemInfo;
     }
 }
 
