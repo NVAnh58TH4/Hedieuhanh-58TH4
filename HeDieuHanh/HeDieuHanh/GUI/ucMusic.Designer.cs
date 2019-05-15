@@ -32,11 +32,11 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.btnBrowser = new System.Windows.Forms.Button();
+            this.txtUrl = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.btnStop = new System.Windows.Forms.Button();
             this.btnPlay = new System.Windows.Forms.Button();
-            this.txtUrl = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -105,6 +105,25 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(604, 31);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
+            // btnBrowser
+            // 
+            this.btnBrowser.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnBrowser.Location = new System.Drawing.Point(425, 3);
+            this.btnBrowser.Name = "btnBrowser";
+            this.btnBrowser.Size = new System.Drawing.Size(176, 25);
+            this.btnBrowser.TabIndex = 0;
+            this.btnBrowser.Text = "...";
+            this.btnBrowser.UseVisualStyleBackColor = true;
+            this.btnBrowser.Click += new System.EventHandler(this.btnBrowser_Click);
+            // 
+            // txtUrl
+            // 
+            this.txtUrl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtUrl.Location = new System.Drawing.Point(3, 3);
+            this.txtUrl.Name = "txtUrl";
+            this.txtUrl.Size = new System.Drawing.Size(416, 22);
+            this.txtUrl.TabIndex = 1;
+            // 
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.ColumnCount = 5;
@@ -122,17 +141,6 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(604, 31);
             this.tableLayoutPanel4.TabIndex = 1;
-            // 
-            // btnBrowser
-            // 
-            this.btnBrowser.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnBrowser.Location = new System.Drawing.Point(425, 3);
-            this.btnBrowser.Name = "btnBrowser";
-            this.btnBrowser.Size = new System.Drawing.Size(176, 25);
-            this.btnBrowser.TabIndex = 0;
-            this.btnBrowser.Text = "...";
-            this.btnBrowser.UseVisualStyleBackColor = true;
-            this.btnBrowser.Click += new System.EventHandler(this.btnBrowser_Click);
             // 
             // btnStop
             // 
@@ -155,14 +163,6 @@
             this.btnPlay.Text = "Play";
             this.btnPlay.UseVisualStyleBackColor = true;
             this.btnPlay.Click += new System.EventHandler(this.btnPlay_Click);
-            // 
-            // txtUrl
-            // 
-            this.txtUrl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtUrl.Location = new System.Drawing.Point(3, 3);
-            this.txtUrl.Name = "txtUrl";
-            this.txtUrl.Size = new System.Drawing.Size(416, 22);
-            this.txtUrl.TabIndex = 1;
             // 
             // ucMusic
             // 
